@@ -36,7 +36,7 @@ $ touch foo.txt
 $ ls
 Copy and paste the output below.
 ----------
-
+foo.txt
 
 
 ==========
@@ -53,7 +53,7 @@ $ touch bar.txt
 Copy and paste the output below.
 ----------
 
-
+bar.txt  foo.txt
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -61,21 +61,24 @@ Copy and paste the output below.
 
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
-
-
+$ cp bar.txt baz.txt
+bar.txt  baz.txt  foo.txt
 
 ==========
 10. Delete the file called bar.txt and then list the files again.
-
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+$ rm bar.txt
+baz.txt  foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
-
+$ mv foo.txt qux.txt
+baz.txt  qux.txt
 
 
 ==========
@@ -90,16 +93,16 @@ Write the command that you used to move the file.  Copy and paste the output of 
 
 Write out the command that you used and what happened.
 ----------
-
-
+$ rmdir my_files
+rmdir: failed to remove 'my_files': Directory not empty
 
 ==========
 14. Try removing the directory called my_files using rm.
 
 Write out the command that you used and what happened.
 ----------
-
-
+$ rm my_files
+rm: cannot remove 'my_files': Is a directory
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec100-lab-03 directory!  
@@ -120,7 +123,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
+A large amoutn of text appeared
 
 
 ==========
@@ -132,8 +135,8 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
-
-
+$ head pg1232.txt
+Title: The Prince
 
 ==========
 18. Using the same file again!
@@ -144,7 +147,7 @@ Use tail on the file to show the contents of the end of the file.
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
-
+subscribe to our email newsletter to hear about new eBooks.
 
 
 ==========
@@ -156,7 +159,9 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
-
+$ less pg1232.txt
+$ more pg1232.txt
+spacebar moves the text down and q erases it
 
 
 ==========
@@ -164,15 +169,17 @@ Write the command that you used below.  Describe what spacebar and q does after 
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
-
-
+I would use less to read a small amount of text, cat to read a lot of text, tail to read just the end and head to read just the beginning or title 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
-
+52639
+$ wc pg1232.txt
 
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+5063
+$ wc -1 pg1232.txt
