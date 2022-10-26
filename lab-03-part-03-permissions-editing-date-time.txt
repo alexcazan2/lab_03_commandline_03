@@ -17,9 +17,9 @@ We're going to be writing a shell script.  First, though... let's figure out wha
 
 What command did you use, and what was its output?
 ----------
+$ date
 
-
-
+Wed Oct 26 18:41:26 EDT 2022
 ==========
 2. Print out a calendar for this month.
 
@@ -33,7 +33,8 @@ What command did you use, and what was its output?
 
 What commands did you use to do this?
 ----------
-
+$ cd ~ 
+pwd
 
 
 ==========
@@ -41,7 +42,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+$ touch copy_to_backup.sh
 
 
 ==========
@@ -49,7 +50,7 @@ What commands did you use to do this?
 
 What command did you use to find the permissions?
 ----------
-
+$ ls -l copy_to_backup.sh
 
 
 ==========
@@ -57,8 +58,8 @@ What command did you use to find the permissions?
 
 What commands did you use to do this?  What was the output?
 ----------
-
-
+$ chmod u+x copy_to_backup.sh
+users can now execute the file
 
 ==========
 7. Try executing the file!
@@ -67,7 +68,8 @@ $ ./copy_to_backup.sh
 
 What command did you use to try to execute the file?  What happens?
 ----------
-
+./copy_to_backup.sh
+nothing
 
 
 ==========
@@ -75,7 +77,7 @@ What command did you use to try to execute the file?  What happens?
 
 What command did you use to do this?
 ----------
-
+$ nano copy_to_backup.sh
 
 
 ==========
@@ -88,6 +90,11 @@ c. print out "I'm done backing up"
 Write out the code in your file below...
 ----------
 
+#!/bin/bash
+cd ~
+mkdir -p backup
+cp *.txt backup
+echo I'm done backing up
 
 
 ==========
@@ -98,7 +105,9 @@ Write out the code in your file below...
 
 What commands did you use to do this?
 ----------
-
+$ cd test
+$ touch 1.txt
+$ touch 2.txt
 
 
 ==========
@@ -106,7 +115,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+$ mv copy_to_backup.sh test
 
 
 ==========
@@ -114,7 +123,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+$ ./copy_to_backup.sh
 
 
 ==========
@@ -122,3 +131,9 @@ What commands did you use to do this?
 
 What commands did you use to do this?  Show the output.
 ----------
+$ cd ~
+$ ls
+$ cd backup
+$ ls
+1.txt 2.txt
+
